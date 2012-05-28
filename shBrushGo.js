@@ -1,6 +1,9 @@
 ;(function()
 {
-	SyntaxHighlighter.brushes.Go = function()
+	// CommonJS
+	SyntaxHighlighter = SyntaxHighlighter || (typeof require !== 'undefined'? require('shCore').SyntaxHighlighter : null);
+
+	function Brush()
 	{
 		var datatypes =	'bool byte complex64 complex128 error float32 float64 ' +
 				'int int8 int16 int32 int64 rune string ' +
@@ -31,7 +34,11 @@
 			{ regex: new RegExp(this.getKeywords(keywords), 'gmi'),		css: 'keyword' }
 			];
 	};
-	 
-	SyntaxHighlighter.brushes.Go.prototype = new SyntaxHighlighter.Highlighter();
-	SyntaxHighlighter.brushes.Go.aliases  = ['go', 'golang'];
+	Brush.prototype = new SyntaxHighlighter.Highlighter();
+	Brush.aliases = ['go', 'golang'];
+
+	SyntaxHighlighter.brushes.Go = Brush;
+
+	// CommonJS
+	typeof(exports) != 'undefined' ? exports.Brush = Brush : null;
 })();
