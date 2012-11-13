@@ -27,11 +27,11 @@
 			{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'comments' },			// multiline comments
 			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },			// strings
 			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },			// strings
-			{ regex: new RegExp(this.getKeywords(datatypes), 'gmi'),	css: 'color1' },
-			{ regex: new RegExp(this.getKeywords(functions), 'gmi'), 	css: 'functions' },
-			{ regex: new RegExp(this.getKeywords(constants), 'gmi'),	css: 'constants' },
-			{ regex: new RegExp(this.getKeywords(zerovalue), 'gmi'),	css: 'constants' },
-			{ regex: new RegExp(this.getKeywords(keywords), 'gmi'),		css: 'keyword' }
+			{ regex: new RegExp(this.getKeywords(datatypes), 'gm'),	css: 'color1' },
+			{ regex: new RegExp(this.getKeywords(functions), 'gm'), 	css: 'functions' },
+			{ regex: new RegExp(this.getKeywords(constants), 'gm'),	css: 'constants' },
+			{ regex: new RegExp(this.getKeywords(zerovalue), 'gm'),	css: 'constants' },
+			{ regex: new RegExp(this.getKeywords(keywords), 'gm'),		css: 'keyword' }
 			];
 	};
 	Brush.prototype = new SyntaxHighlighter.Highlighter();
