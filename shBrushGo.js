@@ -22,13 +22,13 @@
 						'const        fallthrough  if     		range        type ' +
 						'continue     for          import       return       var';
 
-		this.regexList = [
+		this.regexList = [	
+			{ regex: /^\/\/ *#.*$/gm,									css: 'preprocessor' },
 			{ regex: SyntaxHighlighter.regexLib.singleLineCComments,	css: 'comments' },			// one line comments
 			{ regex: SyntaxHighlighter.regexLib.multiLineCComments,		css: 'comments' },			// multiline comments
 			{ regex: SyntaxHighlighter.regexLib.doubleQuotedString,		css: 'string' },			// strings
 			{ regex: SyntaxHighlighter.regexLib.singleQuotedString,		css: 'string' },			// strings
-			{ regex: XRegExp("`([^\\\\`]|\\\\.)*`", 'gs'),				css: 'string' },			// strings			
-			{ regex: /^ *#.*/gm,										css: 'preprocessor' },
+			{ regex: XRegExp("`([^\\\\`]|\\\\.)*`", 'gs'),				css: 'string' },			// strings		
 			{ regex: new RegExp(this.getKeywords(datatypes), 'gm'),		css: 'color1' },
 			{ regex: new RegExp(this.getKeywords(functions), 'gm'), 	css: 'functions' },
 			{ regex: new RegExp(this.getKeywords(constants), 'gm'),		css: 'constants' },
